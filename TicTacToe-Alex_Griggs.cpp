@@ -30,7 +30,7 @@ public:
     }
 
     bool isValidMove(int row, int col) { // Check if move is valid
-        // bounds check for 1–3
+        // bounds check for 1â€“3
         if (row < 1 || row > 3) return false;
         if (col < 1 || col > 3) return false;
 
@@ -56,7 +56,7 @@ public:
     }
 
     bool checkWin() { // Check for a win
-        // rows if any row has all same marks in all 3 columns
+        // rows: if any row has all same marks in all 3 columns
         for (int i = 0; i < 3; ++i) {
             if (board[i][0] == currentPlayer &&
                 board[i][1] == currentPlayer &&
@@ -72,7 +72,7 @@ public:
                 return true;
         }
 
-        // diagonals
+        // diagonals: only two options so brute force
         if (board[0][0] == currentPlayer &&
             board[1][1] == currentPlayer &&
             board[2][2] == currentPlayer)
@@ -150,3 +150,4 @@ int main() {
     game.play();
     return 0;
 }
+
